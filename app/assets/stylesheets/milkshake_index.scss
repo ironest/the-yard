@@ -1,0 +1,33 @@
+#milkshake-index {
+    text-align: center;
+
+    .banner {
+        background-image: url("https://images-gmi-pmc.edge-generalmills.com/2a612714-ee3e-4198-89fd-3f80215c0ef6.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        max-width: 600px;
+        height: 120px;
+        margin: auto;
+    }
+
+    section {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-content: center;
+
+        div {
+            width: 25%;
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+        }
+
+    }
+
+}

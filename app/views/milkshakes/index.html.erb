@@ -1,0 +1,32 @@
+<main id="milkshake-index">
+
+    <div class="banner">
+    </div>
+
+    <h1>All Milkshakes</h1>
+
+    <form action="<%= milkshakes_path%>" method="GET"> 
+        <input type="search" name="search" />
+    </form>
+ 
+    <h1><%= @milkshake%></h1>
+
+    <section>
+
+        <% @milkshakes.each do |milkshake| %>
+
+            <%= link_to(milkshake) do %>
+
+                <div>
+                    <img src="<%= milkshake.image.url%>">
+                    <h2><%= milkshake.name%></h2>
+                    <p><%= number_to_currency(milkshake.price / 100.0)%></p>
+                </div>
+            
+            <% end %>
+
+        <% end %>
+
+    </section>
+
+</main>
