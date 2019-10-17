@@ -50,6 +50,7 @@ for i in 1..50
 
     ingredient_ids = [milkshake_base_id] + milkshake_flavour_ids + milkshake_topping_ids
 
+    # The where condition with an array of IDs, becomes (select * from table where id in ($1, $2, $3))
     ingredients = Ingredient.where(id: ingredient_ids)
     milkshake.ingredients = ingredients
 
