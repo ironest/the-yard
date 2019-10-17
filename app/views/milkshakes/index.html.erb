@@ -13,12 +13,13 @@
 
     <section>
 
-        <% @milkshakes.each do |milkshake| %>
+        <% @milkshakes.each_with_index do |milkshake, index| %>
 
             <%= link_to(milkshake) do %>
 
                 <div>
-                    <img src="<%= milkshake.image.url%>">
+                    <!--img src="<%= milkshake.image.url%>"-->
+                    <img src="https://loremflickr.com/200/200/milkshake?random=<%=index%>" />
                     <h2><%= milkshake.name%></h2>
                     <p><%= number_to_currency(milkshake.price / 100.0)%></p>
                 </div>
