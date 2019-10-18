@@ -40,7 +40,13 @@ for i in 1..50
         description: Faker::Lorem.paragraph
     )
 
-    milkshake.create_image(url: Faker::LoremPixel.image + "?random=" + rand(1..1000).to_s)
+    #milkshake.create_image(url: Faker::LoremPixel.image + "?random=" + rand(1..1000).to_s)
+    milkshake.create_image(
+        url: Faker::LoremFlickr.pixelated_image(
+            size: "400x400",
+            search_terms: ['milkshake']
+        ) + "?random=#{i}"
+    )
 
     puts "created milkshake #{milkshake.name}"
 
