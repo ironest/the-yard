@@ -1,0 +1,25 @@
+<h1>Create Milkshake</h1>
+
+<form action="<%=milkshakes_path%>" method="post">
+
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+    <div>
+        <label for="name">Name</label>
+        <input type="text" name="milkshake[name]" id="name" />
+    </div>
+
+    <div>
+        <label for="description">Description</label>
+        <textarea id="description" name="milkshake[description]"></textarea>
+    </div>
+
+    <div>
+        <label for="price">Price</label>
+        <input type="number" name="milkshake[price]" min="0" id="price" />
+    </div>
+    <div>
+        <input type="submit" value="Create" />
+    </div>
+
+</form>

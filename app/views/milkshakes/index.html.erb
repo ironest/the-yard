@@ -8,6 +8,8 @@
     <form action="<%= milkshakes_path%>" method="GET"> 
         <input type="search" name="search" />
     </form>
+
+    <%= link_to("Create Milkshake", new_milkshake_path) %>
  
     <h1><%= @milkshake%></h1>
 
