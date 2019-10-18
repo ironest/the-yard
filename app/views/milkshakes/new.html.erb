@@ -1,8 +1,32 @@
 <h1>Create Milkshake</h1>
 
+<%= form_with model: @milkshake, local: true do |form| %>
+    <div>
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+    </div>
+
+    <div>
+        <%= form.label :description %>
+        <%= form.text_area :description %>
+    </div>
+
+    <div>
+        <%= form.label :price, "(Price in cents)" %>
+        <%= form.number_field :price, min: 0 %>
+    </div>
+
+    <div>
+        <%= form.submit %>
+    </div>
+
+<% end %>
+
+<!--
+
 <form action="<%=milkshakes_path%>" method="post">
 
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
 
     <div>
         <label for="name">Name</label>
@@ -15,7 +39,7 @@
     </div>
 
     <div>
-        <label for="price">Price</label>
+        <label for="price">Price (in cents)</label>
         <input type="number" name="milkshake[price]" min="0" id="price" />
     </div>
     <div>
@@ -23,3 +47,5 @@
     </div>
 
 </form>
+
+-->
