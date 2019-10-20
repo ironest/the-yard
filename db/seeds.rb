@@ -42,7 +42,7 @@ for i in 1..50
 
     #milkshake.create_image(url: Faker::LoremPixel.image + "?random=" + rand(1..1000).to_s)
     milkshake.create_image(
-        url: Faker::LoremFlickr.pixelated_image(
+        url: Faker::LoremFlickr.image(
             size: "400x400",
             search_terms: ['milkshake']
         ) + "?random=#{i}"
