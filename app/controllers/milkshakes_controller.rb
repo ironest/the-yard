@@ -18,7 +18,7 @@ class MilkshakesController < ApplicationController
 
     def create
 
-        whitelisted_params = params.require(:milkshake).permit(:name, :description, :price)
+        whitelisted_params = params.require(:milkshake).permit(:name, :description, :price, :pic)
 
         @milkshake = Milkshake.create(whitelisted_params)
 

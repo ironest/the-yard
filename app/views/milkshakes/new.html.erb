@@ -25,6 +25,11 @@
     </div>
 
     <div>
+        <%= form.label :pic%>
+        <%= form.file_field :pic, accept: "image/png,image/gif,image/jpeg,image/jpg" %>
+    </div>
+
+    <div>
         <%= form.submit %>
     </div>
 
