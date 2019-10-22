@@ -30,6 +30,10 @@
     </div>
 
     <div>
+        <%= form.collection_check_boxes :ingredient_ids, @ingredients, :id, :name %>
+    </div>
+
+    <div>
         <%= form.submit %>
     </div>
 

@@ -1,4 +1,5 @@
 class MilkshakesController < ApplicationController
+    before_action :authenticate_user!
 
     def index
         if params[:search] && !params[:search].empty?
@@ -14,13 +15,16 @@ class MilkshakesController < ApplicationController
 
     def new
         @milkshake = Milkshake.new
+        @ingredients = Ingredient.all
     end
 
     def create
 
-        whitelisted_params = params.require(:milkshake).permit(:name, :description, :price, :pic)
+        whitelisted_params = params.require(:milkshake).permit(:name, :description, :price, :pic, ingredient_ids: [])
+        # Rails magic understands that ingredient_ids refers to the ingredients table
+        # Optionally, it's possible to do it manually
 
-        @milkshake = Milkshake.create(whitelisted_params)
+        @milkshake = current_user.milkshakes.create(whitelisted_params)
 
         # @milkshake = Milkshake.new
         # @milkshake.name = params[:milkshake][:name]
@@ -29,6 +33,7 @@ class MilkshakesController < ApplicationController
         # @milkshake.save
 
         if @milkshake.errors.any?
+            @ingredients = Ingredient.all
             render "new"
         else
             redirect_to milkshake_path(@milkshake)
