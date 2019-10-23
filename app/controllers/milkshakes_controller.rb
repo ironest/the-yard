@@ -18,6 +18,10 @@ class MilkshakesController < ApplicationController
         @ingredients = Ingredient.all
     end
 
+    def edit
+        @milkshake = Milkshake.find(params[:id])
+    end
+    
     def create
 
         whitelisted_params = params.require(:milkshake).permit(:name, :description, :price, :pic, ingredient_ids: [])

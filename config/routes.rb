@@ -8,4 +8,9 @@ Rails.application.routes.draw do
   get "/milkshakes/new", to: "milkshakes#new", as: "new_milkshake"
   get "/milkshakes/:id", to: "milkshakes#show", as: "milkshake"
 
+  patch "/milkshakes/:id", to: "milkshake#update"
+  put "/milkshakes/:id", to: "milkshake#update"
+  
+  get "/milkshakes/:id/edit", to: "milkshakes#edit", as: "edit_milkshake"
+
 end
